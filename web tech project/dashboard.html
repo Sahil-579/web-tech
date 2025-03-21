@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script>
+        function loadTextFile() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "info.txt", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("fileContent").innerText = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard</h1>
+
+    <nav>
+        <a href="appointment.html">Book an Appointment</a> | 
+        <a href="logout.php">Logout</a>
+    </nav>
+
+    <h2>Clinic Information</h2>
+    <p>Click the button below to load more information about the clinic:</p>
+    <button onclick="loadTextFile()">Load Info</button>
+    <p id="fileContent"></p>
+
+    <h3>Clinic Location</h3>
+    <img src="clinic_map.jpg" usemap="#clinicmap" alt="Clinic Location">
+    <map name="clinicmap">
+        <area shape="rect" coords="34,44,270,350" href="https://maps.google.com" alt="Clinic Location">
+    </map>
+
+    <h3>Background Music</h3>
+    <audio controls>
+        <source src="background_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br><br>
+    <a href="logout.php">Logout</a>
+</body>
+</html>
