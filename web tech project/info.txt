@@ -1,3 +1,0 @@
-Welcome to our Doctor's Appointment System.
-Our clinic provides high-quality healthcare services with professional doctors.
-Book an appointment now to get the best medical care.
