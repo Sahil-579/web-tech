@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment System</title>
+    <script>
+        function loadText() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("textContent").innerText = this.responseText;
+                }
+            };
+            xhr.open("GET", "info.txt", true);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Doctor's Appointment System</h1>
+    
+    <nav>
+        <a href="login.html">Login</a> | 
+        <a href="register.html">Register</a>
+    </nav>
+    
+    <h2>Interactive Elements</h2>
+    
+    <button onclick="loadText()">Load Information</button>
+    <p id="textContent"></p>
+    
+    <h3>Clinic Overview</h3>
+    <video width="320" height="240" controls>
+        <source src="clinic_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h3>Location</h3>
+    <img src="clinic_map.jpg" usemap="#clinicmap" alt="Clinic Location">
+    <map name="clinicmap">
+        <area shape="rect" coords="34,44,270,350" href="https://maps.google.com" alt="Clinic Location">
+    </map>
+    
+    <h3>Background Music</h3>
+    <audio controls>
+        <source src="background_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
